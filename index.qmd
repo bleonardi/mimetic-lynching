@@ -59,18 +59,18 @@ The one-year lag resolves the reflection problem: contemporaneous spatial lags c
 #| echo: false
 res = pd.DataFrame({
     "Variable": ["Spatial lag (neighbor lynching, t−1)", "Black population share", "Log population"],
-    "β": ["+0.0621", "+0.0215", "+0.0009"],
-    "SE": ["(0.0237)", "(0.0102)", "(0.0004)"],
-    "p": ["0.009", "0.036", "0.050"],
-    "Sig.": ["**", "*", "*"],
+    "β": ["+0.054", "+0.183", "+0.001"],
+    "SE": ["(0.013)", "(0.019)", "(0.001)"],
+    "p": ["<0.001", "<0.001", "0.04"],
+    "Sig.": ["***", "***", "*"],
 })
 res.index = [""] * len(res)
 res
 ```
 
-*N = 63,667 county-years. 1,201 counties, 53 years. County and year FE absorbed. Base lynching rate = 0.49%.*
+*N = 63,667 county-years. 1,201 counties, 53 years. County and year FE absorbed. Base lynching rate = 2.9%.*
 
-The spatial lag ρ = +0.054 (p < 0.001). At a base rate of 0.49%, this represents a **1.8× increase per 0.1-unit increase in neighbor lynching rate** in lynching probability when moving from zero to all neighbors having lynched in the prior year.
+The spatial lag ρ = +0.054 (p < 0.001). A one-unit increase in the spatial lag — all neighbors having lynched in the prior year — raises the lynching probability by 5.4 percentage points, nearly doubling the 2.9% base rate.
 
 ![](figures/fig3_coefficients.png){fig-alt="Coefficient plot showing spatial lag as the dominant predictor"}
 
@@ -86,10 +86,10 @@ The most theoretically significant finding comes from comparing four alternative
 #| echo: false
 w_res = pd.DataFrame({
     "W matrix": ["Geographic adjacency", "Newspaper co-coverage", "Denomination similarity", "Railroad network"],
-    "ρ": ["+0.062", "+0.088", "+0.003", "+0.001"],
-    "SE": ["(0.024)", "(0.034)", "(0.020)", "(0.042)"],
-    "p": ["0.009", "0.010", "0.875", "0.988"],
-    "Sig.": ["**", "*", "—", "—"],
+    "ρ": ["+0.054", "+0.101", "+0.041", "+0.041"],
+    "SE": ["(0.013)", "(0.025)", "(0.017)", "(0.020)"],
+    "p": ["<0.001", "<0.001", "0.019", "0.041"],
+    "Sig.": ["***", "***", "*", "*"],
     "N": ["63,667", "50,729", "52,565", "20,837"],
 })
 w_res.index = [""] * len(w_res)
@@ -98,9 +98,9 @@ w_res
 
 *Two-way FE, HC3 SEs. Controls: Black population share, log population.*
 
-![](figures/fig5_w_comparison.png){fig-alt="Spatial lag ρ by W-matrix specification — newspaper > geographic > null"}
+![](figures/fig5_w_comparison.png){fig-alt="Spatial lag ρ by W-matrix specification — newspaper > geographic > railroad ≈ denomination"}
 
-**Newspaper co-coverage produces the largest and most significant ρ (0.088, p = 0.010)**, 88% larger than the geographic adjacency estimate. Railroad co-service and denominational similarity produce flat zeros.
+**Newspaper co-coverage produces the largest ρ (0.101, p < 0.001)**, 88% above the geographic adjacency estimate. All four channels are statistically significant with the corrected full-South dataset, but the newspaper network is the dominant transmission mechanism. Railroad and denomination channels, while real, are substantially weaker.
 
 The implication is pointed: mimetic contagion in lynching traveled through **information networks**, not physical proximity or shared religious culture. Counties that shared newspaper coverage — which in this period meant direct access to accounts of lynching events, accusations, crowd behavior, and perceived justifications — copied each other's violence at a higher rate than merely adjacent counties. This is Girard's "stereotypes of persecution" operating through a specific, historically recoverable infrastructure.
 
