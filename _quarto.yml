@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Mimetic Contagion & Collective Violence"
+  favicon: assets/favicon.ico
+  navbar:
+    left:
+      - href: index.qmd
+        text: Overview
+    right:
+      - icon: github
+        href: https://github.com/bleonardi/mimetic-lynching
+        aria-label: GitHub
+
+format:
+  html:
+    theme: [flatly, assets/custom.scss]
+    toc: true
+    toc-depth: 3
+    linestretch: 1.6
+    code-fold: true
+    highlight-style: github
+    df-print: kable
+    page-layout: article

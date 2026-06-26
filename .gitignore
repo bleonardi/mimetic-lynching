@@ -1,0 +1,10 @@
+data/raw/
+data/processed/*.parquet
+data/processed/*.csv
+__pycache__/
+*.pyc
+.DS_Store
+.quarto/
+
+/.quarto/
+**/*.quarto_ipynb
