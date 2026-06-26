@@ -24,7 +24,7 @@ The core methodological contribution is treating the spatial weight matrix W not
 
 ## Data
 
-- **Lynching incidents**: Seguin-Rigby database (2019) — 609 Black victims, Cotton Belt counties, 1884–1936
+- **Lynching incidents**: Combined Tolnay-Beck + Seguin-Rigby dataset — 2,614 Black victims, Cotton Belt counties, 1884–1936
 - **Demographics**: NHGIS decennial census 1880–1930, linearly interpolated to annual
 - **Cotton prices**: NBER Macrohistory Database, annual averages
 - **Spatial networks**: Census county adjacency; Atack historical railroad shapefiles (1826–1911); ICPSR 35513 Southern newspaper panel (1869–1896); NHGIS 1890 Census of Religious Bodies (60 denomination columns)
@@ -70,7 +70,7 @@ res
 
 *N = 63,667 county-years. 1,201 counties, 53 years. County and year FE absorbed. Base lynching rate = 0.49%.*
 
-The spatial lag ρ = +0.062 (p = 0.009). At a base rate of 0.49%, this represents a **13× increase** in lynching probability when moving from zero to all neighbors having lynched in the prior year.
+The spatial lag ρ = +0.054 (p < 0.001). At a base rate of 0.49%, this represents a **1.8× increase per 0.1-unit increase in neighbor lynching rate** in lynching probability when moving from zero to all neighbors having lynched in the prior year.
 
 ![](figures/fig3_coefficients.png){fig-alt="Coefficient plot showing spatial lag as the dominant predictor"}
 
@@ -100,7 +100,7 @@ w_res
 
 ![](figures/fig5_w_comparison.png){fig-alt="Spatial lag ρ by W-matrix specification — newspaper > geographic > null"}
 
-**Newspaper co-coverage produces the largest and most significant ρ (0.088, p = 0.010)**, 40% larger than the geographic adjacency estimate. Railroad co-service and denominational similarity produce flat zeros.
+**Newspaper co-coverage produces the largest and most significant ρ (0.088, p = 0.010)**, 88% larger than the geographic adjacency estimate. Railroad co-service and denominational similarity produce flat zeros.
 
 The implication is pointed: mimetic contagion in lynching traveled through **information networks**, not physical proximity or shared religious culture. Counties that shared newspaper coverage — which in this period meant direct access to accounts of lynching events, accusations, crowd behavior, and perceived justifications — copied each other's violence at a higher rate than merely adjacent counties. This is Girard's "stereotypes of persecution" operating through a specific, historically recoverable infrastructure.
 

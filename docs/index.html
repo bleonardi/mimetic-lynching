@@ -178,7 +178,7 @@ window.Quarto = {
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <ul>
-<li><strong>Lynching incidents</strong>: Seguin-Rigby database (2019) — 609 Black victims, Cotton Belt counties, 1884–1936</li>
+<li><strong>Lynching incidents</strong>: Combined Tolnay-Beck + Seguin-Rigby dataset — 2,614 Black victims, Cotton Belt counties, 1884–1936</li>
 <li><strong>Demographics</strong>: NHGIS decennial census 1880–1930, linearly interpolated to annual</li>
 <li><strong>Cotton prices</strong>: NBER Macrohistory Database, annual averages</li>
 <li><strong>Spatial networks</strong>: Census county adjacency; Atack historical railroad shapefiles (1826–1911); ICPSR 35513 Southern newspaper panel (1869–1896); NHGIS 1890 Census of Religious Bodies (60 denomination columns)</li>
@@ -201,7 +201,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="results">Results</h2>
 <section id="contagion-is-real" class="level3">
 <h3 class="anchored" data-anchor-id="contagion-is-real">Contagion is real</h3>
-<div id="003760fa" class="cell" data-execution_count="2">
+<div id="e1354c30" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
@@ -249,7 +249,7 @@ window.Quarto = {
 </div>
 </div>
 <p><em>N = 63,667 county-years. 1,201 counties, 53 years. County and year FE absorbed. Base lynching rate = 0.49%.</em></p>
-<p>The spatial lag ρ = +0.062 (p = 0.009). At a base rate of 0.49%, this represents a <strong>13× increase</strong> in lynching probability when moving from zero to all neighbors having lynched in the prior year.</p>
+<p>The spatial lag ρ = +0.054 (p &lt; 0.001). At a base rate of 0.49%, this represents a <strong>1.8× increase per 0.1-unit increase in neighbor lynching rate</strong> in lynching probability when moving from zero to all neighbors having lynched in the prior year.</p>
 <p><img src="figures/fig3_coefficients.png" class="img-fluid" alt="Coefficient plot showing spatial lag as the dominant predictor"></p>
 <p>The non-parametric picture (Fig. 4) makes the relationship stark without any modeling assumptions — counties whose neighbors had any recent lynching history are 9–11× more likely to experience a lynching themselves.</p>
 <p><img src="figures/fig4_contagion_binned.png" class="img-fluid" alt="Lynching rate binned by neighbor lynching history — 11x increase"></p>
@@ -257,7 +257,7 @@ window.Quarto = {
 <section id="the-transmission-channel-newspaper-networks-not-railroads-or-denominations" class="level3">
 <h3 class="anchored" data-anchor-id="the-transmission-channel-newspaper-networks-not-railroads-or-denominations">The transmission channel: newspaper networks, not railroads or denominations</h3>
 <p>The most theoretically significant finding comes from comparing four alternative W matrices. Each encodes a different hypothesis about <em>how</em> mimetic contagion travels.</p>
-<div id="32490334" class="cell" data-execution_count="3">
+<div id="cc2920ba" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
@@ -319,7 +319,7 @@ window.Quarto = {
 </div>
 <p><em>Two-way FE, HC3 SEs. Controls: Black population share, log population.</em></p>
 <p><img src="figures/fig5_w_comparison.png" class="img-fluid" alt="Spatial lag ρ by W-matrix specification — newspaper > geographic > null"></p>
-<p><strong>Newspaper co-coverage produces the largest and most significant ρ (0.088, p = 0.010)</strong>, 40% larger than the geographic adjacency estimate. Railroad co-service and denominational similarity produce flat zeros.</p>
+<p><strong>Newspaper co-coverage produces the largest and most significant ρ (0.088, p = 0.010)</strong>, 88% larger than the geographic adjacency estimate. Railroad co-service and denominational similarity produce flat zeros.</p>
 <p>The implication is pointed: mimetic contagion in lynching traveled through <strong>information networks</strong>, not physical proximity or shared religious culture. Counties that shared newspaper coverage — which in this period meant direct access to accounts of lynching events, accusations, crowd behavior, and perceived justifications — copied each other’s violence at a higher rate than merely adjacent counties. This is Girard’s “stereotypes of persecution” operating through a specific, historically recoverable infrastructure.</p>
 <p>This also sharpens the relationship to <a href="https://doi.org/10.1093/qje/qjae027">Testa and Williams (QJE 2026)</a>, who show that Democratic newspapers amplified Black criminality narratives after electoral losses, triggering violence. Their mechanism is top-down (elite signaling → mob activation). The newspaper W result here captures something different: <strong>horizontal mimesis</strong>, in which mobs in one county copied the accusation script and crowd format from mobs in newspaper-connected counties, independently of any shared electoral shock. The newspaper network was both the elite-to-mob channel Testa-Williams identify and the mob-to-mob channel Girardian theory predicts.</p>
 <hr>
